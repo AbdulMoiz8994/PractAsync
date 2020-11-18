@@ -15,7 +15,7 @@ useEffect(() =>{
 //we call the function
 get_data();
 // alert("we have done")
-},[])
+},[]) 
 
    return(
      <div>
