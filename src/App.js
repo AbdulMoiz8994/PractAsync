@@ -3,36 +3,30 @@ import './App.css';
 // import {Count} from './Count.jsx'
 
 function App() {
-   const [count, setCount]=useState([])
-  //  const[incre,increNub]=useState(0)
-useEffect(() =>{
-  async function get_data() {
-   const response= await fetch('https://api.github.com/users/muhammadmohsin/repos')
-   const data= await response.json()
-   console.log(data)
-   setCount(data)
-}
-//we call the function
-get_data();
-// alert("we have done")
-},[]) 
-
+      const [state,setState]=useState([{}])
+      // console.log(state)
+useEffect(() => {
+  async function get_data()  {
+   const response= await fetch('https://api.github.com/users/Ameen-Alam/repos')
+   const json= await response.json();
+   console.log(json)
+   setState(json)
+  }
+  get_data()
+},[])
    return(
      <div>
-       {count.map((repoObj,ind) => {
-         return(
-           <ul key={ind}>
-          <li>
-            {repoObj.name}
-            </li> 
-           </ul>
-         )
+       <h1>hello world</h1>         
+       <ul>
+       {state.map((value,ind) => {
+     return(
+       <li key={ind}>
+            {value.name}
+       </li>
+     )
        })}
-     {/* <div>
-<button onClick={() => increNub(incre+1)}>
-  Click here and Watch
-</button>
-     </div> */}
+       </ul>
+       <h2>This is  end of line</h2>
      </div>
 
    ) 
@@ -42,13 +36,73 @@ export default App;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const [count, setCount]=useState([])
+//   //  const[incre,increNub]=useState(0)
+// useEffect(() =>{
+//   async function get_data() {
+//    const response= await fetch('https://api.github.com/users/muhammadmohsin/repos')
+//    const data= await response.json()
+//    console.log(data)
+//    setCount(data)
+// }
+// //we call the function
+// get_data();
+// // alert("we have done")
+// },[])
+
+
+
+// {count.map((repoObj,ind) => {
+//   return(
+//     <ul key={ind}>
+//    <li>
+//      {repoObj.name}
+//      </li> 
+//     </ul>
+//   )
+// })}
+
+
+
+
+
+
+
+
+
+
+
+/* <div>
+<button onClick={() => increNub(incre+1)}>
+  Click here and Watch
+</button>
+     </div> */
+
+
 // const [count, setCount]=useState(0)  
 // const[counts, setCounts]=useState(0)
 // useEffect(() => { 
 // alert("we have clicked " + count)
 // },[count])
 
-{/* <button onClick={() =>{setCount(count+1)}}>Click This Button  {count}</button> */}
+/* <button onClick={() =>{setCount(count+1)}}>Click This Button  {count}</button> */
 // l  <button onClick={() =>{setCounts(counts+1)}}>Click This Button  {counts}</button>
 
 
