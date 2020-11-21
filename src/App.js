@@ -1,5 +1,6 @@
 import React, { useEffect,useState } from 'react';
 import './App.css';
+import {Login} from './Login.jsx'
 // import {Count} from './Count.jsx'
 
 function App() {
@@ -16,7 +17,7 @@ useEffect(() => {
 },[])
    return(
      <div>
-       <h1>hello world</h1>         
+       {/* <h1>hello world</h1>         
        <ul>
        {state.map((value,ind) => {
      return(
@@ -26,7 +27,10 @@ useEffect(() => {
      )
        })}
        </ul>
-       <h2>This is  end of line</h2>
+       <h2>This is  end of line</h2> */}
+       <div>
+         <Login/>
+       </div>
      </div>
 
    ) 
