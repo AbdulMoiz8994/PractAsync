@@ -1,22 +1,21 @@
-import React from 'react'
+import React,{useState} from 'react'
+
+//import Components
+import Navbar from './Navbar.jsx'
+
 import { makeStyles } from '@material-ui/core/styles';
 import {Paper,TextField, Button} from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
     root: {
-        marginTop: '5%',
-      display: 'flex',
       flexWrap: 'wrap',
-      padding: 10,
       '& > *': {
-        margin: theme.spacing(1),
-        // width: theme.spacing(16),
-        // height: theme.spacing(16),
+
       },
     },
     Paper:{
-        // marginTop: 10,
+        marginTop: 60,
         height: 350,
         width: 400,
         margin: '10px auto',
@@ -27,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
        width: '95%',
        marginBottom: '0%',
        marginTop: 20,
+       fontSize: 30
     },
     button:{
        width: '95%',
@@ -36,18 +36,28 @@ const useStyles = makeStyles((theme) => ({
   }));
  
  export const Login = () => {
+const[count,setCount]=useState()
+function changes(){
+  setCount(alert("you have login succesfully"))
+   
+}
 
     const classes = useStyles();
+   
 
      return (
+      
     <div className={classes.root}>
-
+     <div>
+         <Navbar/>
+       </div>
+         
       <Paper elevation={3} className={classes.Paper}>
      <h1>LOGIN</h1>
      <form className={classes.root} noValidate autoComplete="off">
-      <TextField id="filled-basic" label="Email" variant="filled" className={classes.input}/>
-      <TextField id="filled-basic" label="Password" variant="filled"  className={classes.input}/>
-      <Button   variant="contained" color="primary" className={classes.button} disableElevation>
+      <TextField  placeholder="Please Enter Email" label="Email" variant="filled" className={classes.input}/>
+      <TextField  type="password" placeholder="Please Enter Password" label="Password" variant="filled"  className={classes.input}/>
+      <Button onClick={changes}   variant="contained" color="primary" className={classes.button} disableElevation>
       LOGIN
     </Button>
     </form>
