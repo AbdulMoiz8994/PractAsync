@@ -5,6 +5,7 @@ import Navbar from './Navbar.jsx'
 
 import { makeStyles } from '@material-ui/core/styles';
 import {Paper,TextField, Button} from '@material-ui/core';
+import { grey } from '@material-ui/core/colors';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,17 +22,19 @@ const useStyles = makeStyles((theme) => ({
         margin: '10px auto',
         padding: 30,
      textAlign: 'center',
+      boxShadow: '0 0 25px  grey'
     },
     input:{
        width: '95%',
        marginBottom: '0%',
        marginTop: 20,
-       fontSize: 30
+       fontSize: 30,
     },
     button:{
        width: '95%',
        padding: 17,
        marginTop: 20,
+       background: 'dodgerblue'
     }
   }));
  
