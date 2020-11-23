@@ -3,21 +3,30 @@ import './App.css';
 import {Login} from './Login.jsx'
 // import {Count} from './Count.jsx'
 
+// import Bar from './Bar.jsx'
+// import PieChart from './PieChart.jsx';
+// import PireChart from './PieChart.jsx'
+
 function App() {
       const [state,setState]=useState([{}])
       // console.log(state)
 useEffect(() => {
   async function get_data()  {
-   const response= await fetch('https://api.github.com/users/Ameen-Alam/repos')
+   try{
+    const response= await fetch('https://api.github.com/users/Ameen-Alam/repos')
    const json= await response.json();
    console.log(json)
+   
    setState(json)
+   }catch(error){
+      console.log(`This is Error: ${error}`)
+   }
   }
   get_data()
 },[])
    return(
      <div>
-       {/* <h1>hello world</h1>         
+    <h1>hello world</h1>         
        <ul>
        {state.map((value,ind) => {
      return(
@@ -27,12 +36,15 @@ useEffect(() => {
      )
        })}
        </ul>
-       <h2>This is  end of line</h2> */}
-       <div>
+       <h2>This is  end of line</h2> 
+        <div>
          <Login/>
-       </div>
-     </div>
+       </div> 
 
+
+    
+     </div>
+     
    ) 
 }
 
@@ -49,12 +61,17 @@ export default App;
 
 
 
+{/* <Bar/>
+       <br/>
+       <br/>
+       <br/>
+
+       <div>
+     <PieChart/>
+     </div> */}
 
 
-
-
-
-
+   
 
 
 // const [count, setCount]=useState([])
